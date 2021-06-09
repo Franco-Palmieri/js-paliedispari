@@ -12,10 +12,8 @@ var userAsk = prompt("pari o dispari?");
 var userNum = parseInt(prompt("inserisci un numero da 1 a 5"));
 var randomNum = Math.floor(Math.random()* 5 + 1);
 
-function somma (a, b) {
-    var result = a + b;
+function somma(a, b){
+    result = a + b;
     return result;
 }
-
-somma(userNum, randomNum);
-document.getElementById("result").innerHTML += somma();
+document.getElementById("result").innerHTML += somma(userNum, randomNum);
