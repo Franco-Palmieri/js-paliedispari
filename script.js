@@ -11,9 +11,27 @@
 var userAsk = prompt("pari o dispari?");
 var userNum = parseInt(prompt("inserisci un numero da 1 a 5"));
 var randomNum = Math.floor(Math.random()* 5 + 1);
+var resultSum = document.getElementById("result");
+var outputElement = document.getElementById("winner")
 
 function somma(a, b){
     result = a + b;
     return result;
 }
-document.getElementById("result").innerHTML += somma(userNum, randomNum);
+var calcSum = somma(userNum, randomNum);
+
+function isPari(calcSum) {
+    if (calcSum % 2 === 0) {
+        return true;
+    } else {
+        return false;
+    }
+}
+var resultPari = isPari(calcSum);
+
+if (resultPari) {
+    outputElement.innerText += "\n Il numero è pari";
+}else{
+    outputElement.innerText += "\n Il numero è dispari"
+}
+resultSum.innerHTML += somma(userNum, randomNum);
